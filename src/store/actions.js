@@ -1,31 +1,23 @@
-export const updateUser = (val) => {
+export const updateUser = (field, val) => {
   console.log('updateUser: val', val)
   return (
     {
       type: 'updateUser',
       payload: {
-        value: val
+        [field]: val
       }
     }
   )
 }
 
-export const addUser = (userName) => {
+export const addUser = (user) => {
+  console.log('user', user)
   return (
     {
       type: 'addUser',
       payload: {
-        userName: userName
+        user
       }
     }
   )
 }
-
-export const updateNote = (content, id, timestamp = Date.now()) => ({
-  type: 'app/updateNote',
-  payload: {
-    id,
-    content,
-    timestamp,
-  },
-});
